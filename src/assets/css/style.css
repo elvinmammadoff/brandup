@@ -2484,7 +2484,7 @@ textarea.form-control {
 
 .single-counter-item.style-icon {
     position: relative;
-    padding-left: 80px
+    padding: 0 20px;
 }
 
 .single-counter-item.style-icon i {
