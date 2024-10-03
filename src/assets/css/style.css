@@ -3746,53 +3746,58 @@ textarea.form-control {
     z-index: 99999
 }
 
-.preloader .content {
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative
-}
-
-.preloader .content::after {
-    content: "";
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    background: #fff
-}
-
-.preloader .content::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #138f82;
-    animation: rotate-five 12s infinite alternate
-}
-
-.preloader .content .box {
-    height: 50%;
-    width: 50%;
-    background: #138f82;
-    position: relative;
-    z-index: 10;
-    animation: 12s rotate-five infinite alternate
-}
-
 .preloader.preloader-deactivate {
     visibility: hidden
 }
+  
+.preloader::before {
+    content: "";
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(8px);
+    position: absolute;
+    width: 140px;
+    height: 55px;
+    z-index: 20;
+    border-radius: 4px 4px 40px 4px;
+    border: 1px solid rgba(255, 255, 255, 0.274);
+    border-top: none;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.082);
+    animation: anim2 2s infinite;
+}
 
-@keyframes rotate-five {
-    0% {
-        transform: rotate(180deg)
+.preloader div {
+    background: rgb(19 143 130);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    z-index: -1;
+    animation: anim 2s linear infinite;
+    animation-delay: calc(0.3s* var(--i));
+    transform: translateY(5px);
+    margin: 0.2em;
+}
+  
+@keyframes anim {
+
+    0%,
+    100% {
+        transform: translateY(5px);
     }
 
     50% {
-        transform: rotate(360deg)
+        transform: translateY(-65px);
+    }
+}
+
+@keyframes anim2 {
+
+    0%,
+    100% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
     }
 }
 

@@ -235,7 +235,9 @@
 
 	// Preloader
 	$(window).on('load', function() {
-		$('.preloader').addClass('preloader-deactivate');
+		setTimeout(function() {
+			$('.preloader').addClass('preloader-deactivate');
+		}, 2000)
 	}) 
 
 	// Subscribe form JS
